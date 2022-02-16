@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.links {
+    list-style: none;
+    padding: 0;
+}
+
+.links .link {
+    padding: 8px;
+}
