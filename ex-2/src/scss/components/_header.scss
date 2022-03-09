@@ -1,0 +1,139 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    max-width: 1920px;
+    padding: 32px 16px 16px 12px;
+    z-index: 90;
+
+    .navbar {
+        @include media-breakpoint-down(xl) {
+            position: fixed;
+            top: 0;
+            right: 0;
+            opacity: 0;
+            width: 0;
+            max-width: 450px;
+            height: 100vh;
+            transform: translateX(120%);
+            visibility: hidden;
+            overflow: hidden;
+            will-change: transform;
+            transition: all ease-in-out 0.35s;
+            transition-property: transform;
+        }
+    }
+
+    .logo-svg,
+    .nav-links,
+    .nav-icons-links {
+        color: $text-white;
+    }
+
+    .navbar-toggle-wrapper {
+        position: relative;
+
+        @include media-breakpoint-up(xl) {
+            display: none;
+            visibility: hidden;
+        }
+
+        @include media-breakpoint-down(xl) {
+            &::after {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                z-index: 90;
+                content: "";
+                background-color: #000;
+                opacity: 0;
+                visibility: hidden;
+                z-index: -100;
+                transition: all ease-in-out 0.35s;
+                transition-property: opacity;
+                cursor: pointer;
+                pointer-events: all;
+            }
+        }
+    }
+}
+
+body.nav-open {
+    @include media-breakpoint-down(xl) {
+        .main-header {
+            .navbar {
+                overflow: initial;
+                transform: translateX(0);
+                visibility: visible;
+                opacity: 1;
+                z-index: 100;
+                width: 75%;
+            }
+
+            .navbar-toggle-wrapper {
+                &::after {
+                    opacity: 0.45;
+                    z-index: 90;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+
+.nav-links-container {
+    li {
+        margin-right: 32px;
+
+        .nav-links {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+}
+
+.nav-icons-container {
+    margin-left: 24px;
+}
+
+// Icons
+.logo-svg {
+    width: 153px;
+    height: 48px;
+}
+
+.nav-icons-links {
+    margin: 0 8px 0 12px;
+}
+
+.nav-icon {
+    &-fb {
+        width: 7px;
+        height: 17px;
+    }
+
+    &-insta,
+    &-in {
+        width: 16px;
+        height: 16px;
+    }
+
+    &-tw {
+        width: 16px;
+        height: 13px;
+    }
+
+    &-youtube {
+        width: 16px;
+        height: 12px;
+    }
+}
