@@ -1,0 +1,19 @@
+$primary: #007CB8;
+$secondary: #007CB8;
+
+$text-white: #fff;
+$bg-white: #fff;
+
+$font-family-sans-serif: "HK Grotesk";
+
+$theme-colors: ("primary": $primary, "secondary": $secondary);
+
+:root {
+    --main-nav-height: 96px;
+}
+
+@include media-breakpoint-down(md) {
+    :root {
+        --main-nav-height: 96px;
+    }
+}
