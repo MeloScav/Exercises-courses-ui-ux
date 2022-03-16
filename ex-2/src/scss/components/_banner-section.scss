@@ -13,6 +13,10 @@
         background-repeat: no-repeat;
         background-position: bottom 0px right -15px;
         pointer-events: none;
+
+        @include media-breakpoint-down(xl) {
+            content: none;
+        }
     }
 }
 
@@ -33,7 +37,7 @@ video {
     padding: var(--main-nav-height) 0;
     min-height: 95vh;
 
-    max-width: 600px;
+    max-width: 620px;
     color: $text-white;
 
     @media (min-width: 2000px) {
@@ -43,16 +47,32 @@ video {
     p {
         margin-bottom: 4px;
         font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
         opacity: .6;
     }
 
     h1 {
         margin-bottom: 32px;
+        line-height: 64px;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+
+    .btn-banner-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 0.4fr;
     }
 
     .btn {
         padding: 8px 16px;
         flex: 1;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
         border-radius: 50px;
     }
 }
