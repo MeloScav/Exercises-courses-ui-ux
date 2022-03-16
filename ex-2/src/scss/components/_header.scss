@@ -20,13 +20,18 @@
     }
 
     .navbar {
+        ul {
+            display: flex;
+            align-items: center;
+        }
+
         @media (max-width: 1050px) {
             position: fixed;
             top: 0;
             right: 0;
             opacity: 0;
             width: 0;
-            max-width: 450px;
+            // max-width: 450px;
             height: 100vh;
             transform: translateX(120%);
             visibility: hidden;
@@ -51,12 +56,12 @@
             visibility: hidden;
         }
 
-        @media (min-width: 1050px) {
+        @media (max-width: 1050px) {
             &::after {
                 position: fixed;
                 top: 0;
                 left: 0;
-                width: 100vw;
+                width: 0;
                 height: 100vh;
                 z-index: 90;
                 content: "";
@@ -74,7 +79,7 @@
 }
 
 body.nav-open {
-    @media (min-width: 1050px) {
+    @media (max-width: 1050px) {
         .main-header {
             .navbar {
                 overflow: initial;
@@ -82,11 +87,12 @@ body.nav-open {
                 visibility: visible;
                 opacity: 1;
                 z-index: 100;
-                width: 75%;
+                width: 100%;
             }
 
             .navbar-toggle-wrapper {
                 &::after {
+                    width: 100%;
                     opacity: 0.45;
                     z-index: 90;
                     visibility: visible;
